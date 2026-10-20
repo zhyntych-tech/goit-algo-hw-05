@@ -2,7 +2,7 @@ import re
 from typing import Callable
 
 def generator_numbers(text: str):
-    pattern = r'-?\d+[\.,]\d+|-?\d+'
+    pattern = r' -?\d+[\.,]\d+ | -?\d+ '
     for word in text.split():
         if re.fullmatch(pattern, word):
             yield float(word.replace(',', '.')) # замінюємо ',' на '.' для перетворення у float
